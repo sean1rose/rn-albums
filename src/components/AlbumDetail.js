@@ -8,9 +8,11 @@ const AlbumDetail = (props) => {
   // Card has children -> the <Text> tag which has the album title -> this can be referenced in Card.js as props.children
   return (
     <Card>
+      
       <CardSection>
         <Text>{props.album.title}</Text>
       </CardSection>
+
     </Card>
   );
 };
