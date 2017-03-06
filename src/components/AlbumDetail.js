@@ -1,12 +1,17 @@
 // functional component, just displaying album data
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+import Card from './Card';
+import CardSection from'./CardSection';
 
 const AlbumDetail = (props) => {
+  // Card has children -> the <Text> tag which has the album title -> this can be referenced in Card.js as props.children
   return (
-    <View>
-      <Text>{props.album.title}</Text>
-    </View>
+    <Card>
+      <CardSection>
+        <Text>{props.album.title}</Text>
+      </CardSection>
+    </Card>
   );
 };
 
