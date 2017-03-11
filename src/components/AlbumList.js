@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
 
@@ -7,7 +7,7 @@ class AlbumList extends Component {
   // initializing state... (no constructor!)
   state = { albums: [] };
 
-  componentWillMount() {
+  componentDidMount() {
     // executed when the component is about to be rendered to the screen...
     // MAKE AJAX REQUEST HERE, then request handler calls setState and this component gets RE-rendered (with the fetched albums)
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
@@ -22,11 +22,11 @@ class AlbumList extends Component {
   }
 
   render() {
-    
+    // expect items w/in this view to be scrollable...
     return (
-      <View>
+      <ScrollView>
         {this.renderAlbums()}
-      </View>
+      </ScrollView>
     );
   }
 }
